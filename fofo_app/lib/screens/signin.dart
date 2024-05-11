@@ -38,8 +38,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 "Fofo app",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 30,
-                  fontFamily: 'YES24GothicR',
+                  fontSize: 50,
+                  fontFamily: 'YES24GothicB',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -51,8 +51,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                   ),
-                  hintText: "User name",
-                  hintStyle: TextStyle(fontSize: 14, color: Colors.grey),
+                  labelText: "User name",
+                  //labelStyle: TextStyle(fontSize: 14, color: Colors.grey),
                   contentPadding: EdgeInsets.all(10),
                   fillColor: Colors.white,
                   filled: true,
@@ -70,7 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                   ),
-                  hintStyle: TextStyle(fontSize: 14, color: Colors.grey),
+                  labelText: "password",
+                  //labelStyle: TextStyle(fontSize: 14, color: Colors.grey),
                   contentPadding: EdgeInsets.all(10),
                   fillColor: Colors.white,
                   filled: true,

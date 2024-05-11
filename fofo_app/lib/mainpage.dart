@@ -15,8 +15,6 @@ class MainPage extends StatelessWidget {
                 // padding: EdgeInsets.all(15),
                 height: 100,
                 child: Center(
-                    child: Text(
-                        "Fofol",
                         style: TextStyle(
                           fontSize: 50,
                           fontFamily: 'YES24GothicR',
