@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'mainpage.dart';
+import 'signup.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -12,12 +14,13 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController logTpassword = TextEditingController();
   String? id;
   String? password;
+  bool isCorrect = true;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('fofo_app/assets/images/background_image.png'),
+          image: AssetImage('assets/images/background_image.png'),
           fit: BoxFit.cover,
         ),
       ),
@@ -29,13 +32,14 @@ class _LoginScreenState extends State<LoginScreen> {
           margin: const EdgeInsets.only(left: 100, right: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
                 "Fofo app",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 30,
+                  fontFamily: 'YES24GothicR',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -59,13 +63,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 5,
               ),
               TextField(
+                obscureText: true,
                 decoration: const InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey)),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                   ),
-                  hintText: "password",
                   hintStyle: TextStyle(fontSize: 14, color: Colors.grey),
                   contentPadding: EdgeInsets.all(10),
                   fillColor: Colors.white,
@@ -83,6 +87,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     password = logTpassword.text;
                     print("id: $id");
                     print("password: $password");
+                    if (isCorrect) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MainPage()));
+                    }
                   });
                 },
                 child: Container(
@@ -104,14 +114,32 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 2,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("회원가입"),
-                  Text(" / "),
-                  Text("비밀번호 찾기"),
-                  Text(" / "),
-                  Text("아이디 찾기"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Signup()));
+                    },
+                    child: const Text("회원가입"),
+                  ),
+                  const Text(" / "),
+                  GestureDetector(
+                    onTap: () {
+                      print("비밀번호 찾기");
+                    },
+                    child: const Text("비밀번호 찾기"),
+                  ),
+                  const Text(" / "),
+                  GestureDetector(
+                    onTap: () {
+                      print("아이디 찾기");
+                    },
+                    child: const Text("아이디 찾기"),
+                  ),
                 ],
               ),
             ],

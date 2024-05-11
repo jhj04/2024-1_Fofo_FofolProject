@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fofo_app/setting.dart';
-import 'signup.dart';
-import 'signin.dart';
+import 'package:fofo_app/screens/setting.dart';
+import 'screens/signup.dart';
+import 'screens/signin.dart';
 
 void main() {
   //initializeDateFormatting().then((_) => runApp(const MyApp()));
