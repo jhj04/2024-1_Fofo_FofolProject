@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fofo_app/screens/find_id_password.dart';
 import 'mainpage.dart';
 import 'signup.dart';
 
@@ -57,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   fillColor: Colors.white,
                   filled: true,
                 ),
-                controller: logTid,
+                controller: logTid, //데이터 베이스 연동/id 받아옴
               ),
               const SizedBox(
                 height: 5,
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   fillColor: Colors.white,
                   filled: true,
                 ),
-                controller: logTpassword,
+                controller: logTpassword, //데이터 베이스 연동/password 받아옴
               ),
               const SizedBox(
                 height: 10,
@@ -130,6 +131,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Text(" / "),
                   GestureDetector(
                     onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FindIDandPassword()));
                       print("비밀번호 찾기");
                     },
                     child: const Text("비밀번호 찾기"),
@@ -137,6 +142,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Text(" / "),
                   GestureDetector(
                     onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FindIDandPassword()));
                       print("아이디 찾기");
                     },
                     child: const Text("아이디 찾기"),
