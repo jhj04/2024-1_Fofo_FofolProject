@@ -83,12 +83,17 @@
 import 'package:flutter/material.dart';
 import 'package:fofo_app/setting.dart';
 
-class ActivityList extends StatelessWidget {
+class ActivityList extends StatefulWidget {
   const ActivityList({Key? key}) : super(key: key);
 
   @override
+  State<ActivityList> createState() => _ActivityListState();
+}
+
+class _ActivityListState extends State<ActivityList> {
+  @override
   Widget build(BuildContext context) {
-    int itemCount = 12; // 그리드뷰의 항목 개수를 관리
+    int _itemCount = 4;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -144,7 +149,7 @@ class ActivityList extends StatelessWidget {
             mainAxisSpacing: 10,
             childAspectRatio: 1 / 1.5,
           ),
-          itemCount: 4,
+          itemCount: _itemCount,
           itemBuilder: (BuildContext context, int index) {
             return Container(
               color: Colors.grey[300],
@@ -166,8 +171,9 @@ class ActivityList extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         
         onPressed: () {
-          itemCount++; // 항목 개수 증가
-          // setState(() {}); // 변경 사항을 반영하려면 setState를 호출해야 함 (StatefulWidget 사용 시에만 가능)
+            setState(() {
+              _itemCount++;
+            });
         },
         backgroundColor: Color(0xff636FA4),
         child: const Icon(Icons.add),
