@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fofo_app/setting.dart';
 import 'package:fofo_app/widgets/calendar_widget.dart';
+import 'package:get/utils.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -44,31 +45,58 @@ class MainPage extends StatelessWidget {
               ),
             ],
           ),
-          Container(
-            width:450,
-            height: 250,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              gradient: LinearGradient(
-                begin : Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors:[
-                  Color(0xffBCECFF),
-                  Color(0xffC2BBFF), 
-                ],
-              ),
-            ),
-            alignment: Alignment.center,
-            child: Container(
-              width:446,
-              height: 246,
+          Stack(
+            children:[ Container(
+              width:450,
+              height: 250,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                gradient: LinearGradient(
+                  begin : Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors:[
+                    Color(0xffBCECFF),
+                    Color(0xffC2BBFF), 
+                  ],
+                ),
+              ),
+              alignment: Alignment.center,
+              child: Container(
+                width:446,
+                height: 246,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                ),
+              ), 
+            ),
+            Positioned(
+              left:20,
+              top:10,
+              child: Container(
+                height: 100,
+              // child:Text("$username")
+                  child:Text(
+                    "현주's fofol",
+                    style: TextStyle(
+                      color: Color(0xff636FA4),
+                      fontSize: 30,
+                      ),
+                  ),
               ),
             ),
-          ),
+              Positioned(
+                top : 60,
+                left : 20,
+                child: Image.asset(
+                  'assets/images/pic.jpg',
+                  width: 100,
+                  height: 100,
+                  fit:BoxFit.cover
+                  ),
+              ),
+        ]),
           const SizedBox(
             width: 100,
             height: 30,
