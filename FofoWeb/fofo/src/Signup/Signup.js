@@ -1,25 +1,48 @@
-// 회원가입 화면
-
-import React, { useState } from "react";
-import "./Signup.css";
+import React, { useState } from 'react';
+import './Signup.css';
 
 const SignupPage = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [userid, setUserid] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [userid, setUserid] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // 회원가입 처리 로직
     if (password !== confirmPassword) {
-      setError("비밀번호가 일치하지 않습니다.");
+      setError('비밀번호가 일치하지 않습니다.');
     } else {
-      // 회원가입 성공 처리
-      setError("");
-      alert("회원가입이 완료되었습니다!");
+      try {
+        const response = await fetch('http://localhost:3000/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username,
+            email,
+            password,
+            userid,
+          }),
+        });
+        if (response.ok) {
+          setError('');
+          alert('회원가입이 완료되었습니다!');
+          setUsername('');
+          setEmail('');
+          setPassword('');
+          setUserid('');
+          setConfirmPassword('');
+        } else {
+          const data = await response.json();
+          setError(data.error);
+        }
+      } catch (error) {
+        setError('회원가입 중 오류가 발생했습니다.');
+        console.error('Signup error:', error);
+      }
     }
   };
 
@@ -50,7 +73,7 @@ const SignupPage = () => {
             <div className="id">
               <label htmlFor="userid">아이디</label>
               <input
-                type="userid"
+                type="text"
                 id="userid"
                 value={userid}
                 onChange={(e) => setUserid(e.target.value)}
@@ -78,7 +101,7 @@ const SignupPage = () => {
           <button className="button" type="submit">
             회원가입
           </button>
-          {error && <div style={{ color: "red" }}>{error}</div>}
+          {error && <div style={{ color: 'red' }}>{error}</div>}
         </form>
       </div>
     </div>
@@ -86,3 +109,4 @@ const SignupPage = () => {
 };
 
 export default SignupPage;
+
