@@ -90,12 +90,52 @@ class MainPage extends StatelessWidget {
                 top : 60,
                 left : 20,
                 child: Image.asset(
-                  'assets/images/pic.jpg',
-                  width: 100,
-                  height: 100,
+                  // 'assets/images/pic.png',
+                  'assets/images/background_image.png',
+                  width: 170,
+                  height: 170,
                   fit:BoxFit.cover
                   ),
               ),
+              Positioned(
+                  top : 60,
+                  left : 210,
+                child: Column(
+                  children: [
+                    Container(
+                      child: Text(
+                        "주요 경력",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontFamily: 'YES24GothicR',
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF647087),
+                          ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: Text(
+                        "경력 1",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontFamily: 'YES24GothicR',
+                          color: Color(0xFF647087),),
+                      ),
+                    ),
+
+                                        Container(
+                      padding: EdgeInsets.all(20),
+                      child: Text(
+                        "경력 2",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontFamily: 'YES24GothicR',
+                          color: Color(0xFF647087),),
+                      ),
+                    ),
+                  ],
+                ),),
         ]),
           const SizedBox(
             width: 100,
