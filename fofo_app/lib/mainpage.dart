@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fofo_app/activity_list.dart';
 import 'package:fofo_app/setting.dart';
 import 'package:fofo_app/widgets/calendar_widget.dart';
 import 'package:get/utils.dart';
@@ -124,7 +125,7 @@ class MainPage extends StatelessWidget {
                       ),
                     ),
 
-                                        Container(
+                    Container(
                       padding: EdgeInsets.all(20),
                       child: Text(
                         "경력 2",
@@ -147,6 +148,17 @@ class MainPage extends StatelessWidget {
             child: Calendar(),
           )
         ],
+        
+      ),
+            floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ActivityList()), // a.dart 파일로 이동
+          );
+        },
+        backgroundColor: Color(0xff636FA4),
+        child: const Icon(Icons.list),
       ),
     );
   }
