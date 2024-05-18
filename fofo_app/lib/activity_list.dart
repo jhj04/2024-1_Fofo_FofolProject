@@ -82,6 +82,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fofo_app/setting.dart';
+import 'package:fofo_app/writing.dart';
 
 class ActivityList extends StatefulWidget {
   const ActivityList({Key? key}) : super(key: key);
@@ -93,12 +94,12 @@ class ActivityList extends StatefulWidget {
 class _ActivityListState extends State<ActivityList> {
   @override
   Widget build(BuildContext context) {
-    int _itemCount = 4;
+    int itemCount = 4;
 
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(150),
+        preferredSize: const Size.fromHeight(150),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -149,7 +150,7 @@ class _ActivityListState extends State<ActivityList> {
             mainAxisSpacing: 10,
             childAspectRatio: 1 / 1.5,
           ),
-          itemCount: _itemCount,
+          itemCount: itemCount,
           itemBuilder: (BuildContext context, int index) {
             return Container(
               color: Colors.grey[300],
@@ -169,16 +170,20 @@ class _ActivityListState extends State<ActivityList> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        
         onPressed: () {
-            setState(() {
-              _itemCount++;
-            });
+          setState(() {
+            itemCount++;
+          });
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Write(),
+            ),
+          );
         },
-        backgroundColor: Color(0xff636FA4),
+        backgroundColor: const Color(0xff636FA4),
         child: const Icon(Icons.add),
       ),
     );
   }
 }
-
