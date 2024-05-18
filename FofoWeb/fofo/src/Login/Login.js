@@ -1,59 +1,66 @@
-// Login 화면
-
 import React, { useState } from "react";
 import "./Login.css";
-// import ReactDOM from 'react-dom';
-// import { BrowserRouter } from 'react-router-dom';
 
 const LoginPage = () => {
-  const [userid, setUserid] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = () => {
-    // 로그인 처리 로직
-    if (userid === "admin" && password === "password") {
-      // 로그인 성공 처리
-      setError("");
-      alert("로그인 성공");
-    } else {
-      // 로그인 실패 처리
-      setError("유효하지 않은 사용자 이름 또는 비밀번호입니다.");
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+
+      const data = await response.json();
+      // Handle successful login
+      alert("로그인 성공했습니다!");
+      console.log(data); 
+    } catch (err) {
+      setError("로그인 실패했습니다. 이메일과 비밀번호를 확인해주세요.");
+      console.error("로그인 오류: ", err);
     }
   };
 
   return (
     <div className="login-body">
-      <div className="all">
+      <div className="container">
         <h2>로그인</h2>
-        <div className="wrapper">
-          <div className="idfield">
-            <label htmlFor="userid">아이디</label>
-            <input
-              type="text"
-              id="userid"
-              value={userid}
-              onChange={(e) => setUserid(e.target.value)}
-            />
+        <form onSubmit={handleLogin}>
+          <div className="wrapper">
+            <div className="form-group">
+              <label htmlFor="email">이메일</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="이메일을 입력하세요"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">비밀번호</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="비밀번호를 입력하세요"
+              />
+            </div>
           </div>
-          <div className="passwordfield">
-            <label htmlFor="password">비밀번호</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-        </div>
-        <button className="button" onClick={handleLogin}>
-          로그인
-        </button>
-        {error && (
-          <div className="error" style={{ color: "red" }}>
-            {error}
-          </div>
-        )}
+          <button className="button" type="submit">로그인</button>
+          {error && <div className="error">{error}</div>}
+        </form>
       </div>
     </div>
   );
