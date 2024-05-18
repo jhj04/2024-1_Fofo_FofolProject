@@ -84,12 +84,12 @@ class _Calendar extends State<Calendar> {
           DateTime date1 = DateTime(date.year, date.month, date.day);
           if (_events.containsKey(date1)) {
             return Container(
-              padding: const EdgeInsets.only(bottom: 5),
-              width: MediaQuery.of(context).size.width * 0.065,
+              margin: const EdgeInsets.only(top: 40),
+              width: 5,
               decoration: const BoxDecoration(
                 border: Border.fromBorderSide(
-                    BorderSide(color: Color.fromARGB(255, 105, 105, 105))),
-                color: Color.fromARGB(0, 244, 67, 54),
+                    BorderSide(color: Color.fromARGB(255, 255, 0, 0))),
+                color: Color.fromARGB(255, 255, 0, 0),
                 shape: BoxShape.circle,
               ),
             );
