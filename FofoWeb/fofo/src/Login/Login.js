@@ -1,24 +1,36 @@
-// Login 화면
-
-import React, { useState } from "react";
-import "./Login.css";
-// import ReactDOM from 'react-dom';
-// import { BrowserRouter } from 'react-router-dom';
+import React, { useState } from 'react';
+import './Login.css';
 
 const LoginPage = () => {
-  const [userid, setUserid] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [userid, setUserid] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleLogin = () => {
-    // 로그인 처리 로직
-    if (userid === "admin" && password === "password") {
-      // 로그인 성공 처리
-      setError("");
-      alert("로그인 성공");
-    } else {
-      // 로그인 실패 처리
-      setError("유효하지 않은 사용자 이름 또는 비밀번호입니다.");
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: userid, // Assuming userid is the email for login
+          password,
+        }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setError('');
+        alert('로그인 성공');
+        localStorage.setItem('token', data.token); // Store the token in local storage
+        // Redirect to a protected route or dashboard
+      } else {
+        const data = await response.json();
+        setError(data.error);
+      }
+    } catch (error) {
+      setError('로그인 중 오류가 발생했습니다.');
+      console.error('Login error:', error);
     }
   };
 
@@ -50,7 +62,7 @@ const LoginPage = () => {
           로그인
         </button>
         {error && (
-          <div className="error" style={{ color: "red" }}>
+          <div className="error" style={{ color: 'red' }}>
             {error}
           </div>
         )}
