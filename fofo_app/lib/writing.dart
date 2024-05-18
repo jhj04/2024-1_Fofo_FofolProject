@@ -1,51 +1,147 @@
 import 'package:flutter/material.dart';
+import 'activity_list.dart';
 
-class Write extends StatelessWidget {
-  Write({super.key});
-  TextEditingController title = TextEditingController();
+class Write extends StatefulWidget {
+  const Write({super.key});
 
   @override
+  State<Write> createState() => _WriteState();
+}
+
+class _WriteState extends State<Write> {
+  TextEditingController title = TextEditingController();
+  TextEditingController content = TextEditingController();
+  Color back = const Color.fromARGB(28, 188, 236, 255);
+  @override
   Widget build(BuildContext context) {
-    final Size SIZE = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(color: Color(0xFFBCECFF)),
-        child: Column(children: [
-          const Text(
-            "Fofol",
-            style: TextStyle(
-              fontSize: 20,
-              fontFamily: 'YES24GothicB.ttf',
+        width: double.infinity,
+        height: 932,
+        decoration: BoxDecoration(
+          color: back,
+        ),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 10,
             ),
-          ),
-          Row(
-            children: [
-              const Text(
-                "활동명: ",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                ),
+            const Text(
+              "Fofol",
+              style: TextStyle(
+                fontSize: 50,
+                fontFamily: 'YES24GothicR',
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                color: Colors.black,
               ),
-              TextField(
-                controller: title,
-                decoration: const InputDecoration(
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 20,
+                ),
+                const Text(
+                  "활동명: ",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                  ),
+                ),
+                const SizedBox(width: 1),
+                SizedBox(
+                  width: 250,
+                  child: TextField(
+                    controller: title,
+                    decoration: InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: back,
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: back,
+                        ),
+                      ),
+                      contentPadding: const EdgeInsets.all(10),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 30),
+                Column(
+                  children: [
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 50,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: const ButtonStyle(),
+                            child: const Text(
+                              "#00",
+                            ),
+                          ),
+                        ),
+                        IconButton(
+                            onPressed: () {}, icon: const Icon(Icons.check)),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 2,
+            ),
+            Container(
+              width: 450,
+              height: 1,
+              decoration: const BoxDecoration(
+                color: Color(0xFFC7B3D7),
+              ),
+            ),
+            SizedBox(
+              width: 400,
+              child: TextField(
+                controller: content,
+                decoration: InputDecoration(
+                  hintText: "활동에 대해 소개해 주세요.",
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.black,
+                      color: back,
+                    ),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: back,
                     ),
                   ),
                 ),
               ),
-              TextButton(onPressed: () {}, child: const Text("#00")),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.check))
-            ],
-          ),
-          const SizedBox(),
-          Container(
-            width: SIZE.width * 20,
-          )
-        ]),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {});
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ActivityList(),
+            ),
+          );
+        },
+        backgroundColor: const Color(0xff636FA4),
+        child: const Icon(Icons.save),
       ),
     );
   }

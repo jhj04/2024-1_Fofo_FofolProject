@@ -3,7 +3,7 @@ import 'package:fofo_app/setting.dart';
 import 'package:fofo_app/mainpage.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:fofo_app/activity_list.dart';
-
+import 'signin.dart';
 
 void main() {
   initializeDateFormatting().then((_) => runApp(const MyApp()));
@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Fofol',
       // home : SignUp(),
-      // home: LoginScreen(),
-      // home: MainPage(),
-      home : ActivityList(),
+      home: LoginScreen(),
+      //home: MainPage(),
+      //home : ActivityList(),
     );
   }
 }
