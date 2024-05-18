@@ -1,0 +1,170 @@
+.write-body {
+    background-color: #f8f8f8;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d6d6e4;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    color: #444;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li a {
+    color: #444;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.new-project-btn {
+    background-color: #b0b0c5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-project-btn:hover {
+    background-color: #9c9cbc;
+}
+
+.main-section {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.myProject {
+    background-color: #d6d6e4;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 4; /* 80% */
+    margin-right: 20px;
+}
+
+.myProject h3 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 120px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f5;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon fill="%23333" points="0,0 10,0 5,5"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 10px;
+}
+
+.explains {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.explains .form-group {
+    display: block;
+}
+
+.explains label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.explains textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f5;
+}
+
+.file-upload {
+    background-color: #d6d6e4;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.file-upload h3 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.file-upload input[type="file"] {
+    margin-top: 10px;
+}
+
+.file-list {
+    margin-top: 10px;
+}
+
+.file-item {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}
+
+.file-upload button {
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b0b0c5;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.file-upload button:hover {
+    background-color: #9c9cbc;
+}

@@ -1,0 +1,157 @@
+/* .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .schedule {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .schedule-list{
+    width: calc(60% - 3px);
+  }
+  .calendar {
+    width: calc(40% - 3px); 
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .Projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px; 
+  }
+  
+  .project {
+    width: calc(33.33% - 3px); 
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-project {
+    width: calc(33.33% - 3px); 
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+
+
+  Main_body.css */
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.schedule {
+  /* flex: 1; */
+  background-color: rgba(154, 151, 255, 0.5);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+  height: 50%;
+  flex-direction: row;
+}
+
+.schedule-list {
+  font-weight: bold;
+  width: calc(60% - 3px); 
+  background-color: #f0f0f0;
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  flex-basis: 48%;
+  border-radius: 10%;
+}
+
+.calendar {
+  font-weight: bold;
+  width: calc(40% - 3px); 
+  background-color: #f0f0f0;
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  border-radius: 3%;
+  flex-basis: 48%;
+}
+
+.editBtn-section {
+  background-color: white;
+  /* padding: 1rem; */
+  display: flex;
+  flex-direction: row-reverse;
+  height: auto;
+  padding-right: 40px;
+}
+
+.editBtn {
+  margin-top: 10px;
+  background-color: gray;
+  color: white;
+  border: 2px solid gray; 
+  width: 50px;
+  height: 30px;
+  border-radius: 10%; 
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.Projects {
+  /* flex: 2; */
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  overflow-y: auto;
+  height: 70%;
+  flex-direction: row;
+}
+
+.project {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  width: calc(33.33% - 3px);
+}
+
+.newForderBtn {
+  margin-top: 10px;
+  background-color: #9a97ff;
+  color: white;
+  border: 2px solid #9a97ff; 
+  width: calc(33.33% - 3px);
+  border-radius: 10%; 
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.inputForderName {
+  /* width: 100%; */
+  padding: 0.5rem;
+  /* background-color: #9a97ff; */
+  color: white;
+  /* border: 1px solid #ccc; */
+  width: calc(33.33% - 3px); 
+}
+
+.addProjectBtn {
+  margin-top: 10px;
+  color: #9a97ff;
+  background-color: white;
+  border: 2px solid #9a97ff;
+  border-radius: 10%;
+  width: calc(33.33% - 3px); 
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 3rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}

@@ -1,0 +1,80 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: auto;
+  width: 100%; 
+  padding: 0 20px;
+  }
+  
+.leftnav {
+  flex: 1;
+}
+  
+.body {
+  flex: 2; 
+}
+  
+.rightnav {
+  flex: 3; 
+}
+  
+/* 
+.main-content-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  padding: 20px;
+} */
+
+.main-content-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.searchBar {
+  margin-bottom: 20px;
+}
+
+.searchBar input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.searchBar button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.content-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+/* 스크롤 바 스타일링 */
+/* Chrome, Safari, Edge 및 Opera */
+.content-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.content-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.content-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.content-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

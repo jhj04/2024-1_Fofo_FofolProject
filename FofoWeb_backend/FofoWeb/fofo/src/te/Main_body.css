@@ -1,0 +1,123 @@
+/* .main-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .searchBar {
+    margin-bottom: 20px;
+  }
+  
+  .content-container {
+    width: 80%; 
+  }
+   */
+
+
+   .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .schedule {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .schedule-list, .calendar {
+    flex: 1;
+    margin: 0 1rem;
+  }
+  
+  .Projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  
+  .project {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33% - 40px); 
+    box-sizing: border-box;
+    position: relative; 
+  }
+  
+  .input-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .project-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .create-button, .edit-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #9a97ff;
+    color: #fff;
+    border: 2px solid #555; 
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+  }
+  
+  .create-button:hover, .edit-button:hover {
+    background-color: #7d7aff;
+    transform: scale(1.1); 
+  }
+  
+  .add-project {
+    margin-top: 10px;
+    background-color: #9a97ff;
+    color: #fff;
+    border: 2px solid #555;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .add-project:hover {
+    background-color: #7d7aff;
+    transform: scale(1.1); 
+  }
+  
+  .addProjectBtn {
+    margin-top: 10px;
+    color: #9a97ff;
+    background-color: white;
+    border: 2px solid #9a97ff;
+    border-radius: 10%;
+    width: 100px;
+    height: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .addProjectBtn:hover {
+    background-color: #e0e0ff;
+    transform: scale(1.1);
+  }
+  
