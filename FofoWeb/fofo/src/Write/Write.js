@@ -45,7 +45,7 @@ const WritePage = () => {
           </li>
         </ul>
         <button className="new-project-btn" onClick={handleNewProjectClick}>
-          새 프로젝트
+          저장하기
         </button>
       </nav>
       <form onSubmit={handleSubmit}>
